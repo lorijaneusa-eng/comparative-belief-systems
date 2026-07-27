@@ -301,7 +301,7 @@ function renderTopicBlock(topic, index, term) {
   }
   var cards = document.createElement('div');
   cards.className = 'cards';
-  selected.forEach(function(idx) {
+  selected.slice().sort(function(a, b) { return a - b; }).forEach(function(idx) {
     cards.appendChild(renderAnswerCard(DATA.traditions[idx], topic.answers[idx], term));
   });
   block.appendChild(cards);
